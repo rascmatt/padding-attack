@@ -91,7 +91,7 @@ public class PaddingAttack {
 
             // What the decryption algorithm is supposed to see
             // |-> block - p times         |-> p times
-            // 0x00 0x00 0x00 0x00 0x00... 0xpp 0xpp 0xpp ...
+            // 0x00 0x00 0x00 0x00 0x00... 0x(p+1) 0x(p+1) 0x(p+1) ...
             byte[] m1 = concat(init(blockSize - p, (byte) 0x00), init(p, (byte) (p + 1)));
 
             for (int i = 0; i < 0xFF; i++) {
